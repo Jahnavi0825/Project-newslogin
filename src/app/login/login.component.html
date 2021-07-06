@@ -1,0 +1,36 @@
+<div class="container">
+
+    <div class="label">
+<form [formGroup] = "emailFormGroup" class="example-form" >
+    <h1 class="log">Login</h1>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Username</mat-label>
+      <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="emailFormGroup?.hasError('email') && !emailFormGroup?.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormGroup?.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+<div class="example-container">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <p><a href="#">Forgot password?</a></p>
+</div>
+
+<div class="example-label"></div>
+<button mat-raised-button color="primary" target="_blank" routerLink="topheading" routerlinkActive="routerlinkActive">Login</button>
+<p>Not a member? <a href="#"> Signup</a></p>
+
+</form>
+</div>
+</div>
+
+
